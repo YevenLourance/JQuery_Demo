@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $("#p1").dblclick(function(){
+    $(this).hide();
+  });
+});
+
+$(document).ready(function(){
+  $("p").on({
+    mouseenter: function(){
+      $(this).css("background-color", "lightgray");
+    },  
+    mouseleave: function(){
+      $(this).css("background-color", "lightblue");
+    }, 
+    click: function(){
+      $(this).css("background-color", "yellow");
+    }  
+  });
+});
+</script>
+
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+
+
+$(document).ready(function(){
+  $("input").focus(function(){
+    $(this).css("background-color", "yellow");
+  });
+  $("input").blur(function(){
+    $(this).css("background-color", "green");
+  });
+});
+
+
+$(document).ready(function(){
+  $("#fadeout").click(function(){
+    $("#div1").fadeOut();
+    $("#div2").fadeOut("slow");
+    $("#div3").fadeOut(3000);
+  });
+});
+
+$(document).ready(function(){
+  $("#fadein").click(function(){
+    $("#div4").fadeIn();
+    $("#div5").fadeIn("slow");
+    $("#div6").fadeIn(3000);
+  });
+});
+
+
+
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+  $("#animation").click(function(){
+    var div = $("#div7");  
+    div.animate({left: '100px'}, "slow");
+    div.animate({fontSize: '3em'}, "slow");
+  });
+});
+
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $("#test1").text("Hello world!");
+  });
+  $("#btn2").click(function(){
+    $("#test2").html("<b>Hello world!</b>");
+  });
+  $("#btn3").click(function(){
+    $("#test3").val("Dolly Duck");
+  });
+});
+
+</script>
+
+
+</head>
+
+<style> 
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #e5eecc;
+  border: solid 1px #c3c3c3;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+
+<body>
+<h1> jQuery Demo</h1>
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<p id = "p1">If you double-click on me, I will disappear.</p>
+
+
+<br> </br>
+Name: <input type="text" name="fullname"><br>
+Email: <input type="text" name="email">
+
+<br></br>
+
+<div id="flip">Click to slide the panel down or up</div>
+<div id="panel">Hello world! Here is the hidden content. </div>
+
+<button id="fadeout">Click to fade out boxes</button>
+<br><br>
+
+<div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+
+
+<button id="fadein">Click to fade in boxes</button>
+<br><br>
+
+<div id="div4" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div5" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div6" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+<br></br>
+<p id="test1">This is a paragraph.</p>
+<p id="test2">This is another paragraph.</p>
+
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+
+<button id="btn1">Set Text</button>
+<button id="btn2">Set HTML</button>
+<button id="btn3">Set Value</button>
+
+<button id="animation">Start Animation</button>
+
+<p>By default, all HTML elements have a static position, and cannot be moved. 
+To manipulate the position, remember to first set the CSS position property of the element to relative,
+ fixed, or absolute!</p>
+
+<div id="div7" style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+
+
+
+
+</body>
+</html>
