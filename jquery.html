@@ -90,6 +90,13 @@ $(document).ready(function(){
   });
 });
 
+$.noConflict();
+jQuery(document).ready(function(){
+  jQuery("#testdemo").click(function(){
+    jQuery("#results").text("jQuery is still working!");
+  });
+});
+
 </script>
 
 
@@ -111,6 +118,11 @@ $(document).ready(function(){
 
 <body>
 <h1> jQuery Demo</h1>
+
+<p id = "results">Test results</p>
+
+<button id= "testdemo">Test jQuery</button>
+
 <p>If you click on the "Hide" button, I will disappear.</p>
 
 <button id="hide">Hide</button>
